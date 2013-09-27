@@ -29,5 +29,7 @@ class User < ActiveRecord::Base
 	def password_required?
 		super && provider.blank?		
 	end
+
+	has_many :items
 end
 

@@ -1,3 +1,29 @@
 <h3>User</h3>
+
 <p>User: <%= @user.name %></p>
 <p>Email: <%= @user.email if @user.email %></p>
+
+<%= @items.name %>
+
+  <% @items.each do |item| %>
+    
+      <div class="box span3">        
+          <!-- <img src="<%= item.image %>" alt=""> -->
+          <%= image_tag item.picture(:medium) %>
+          <%= item.picture.url %>
+
+          <div class="content">
+            <h5><%= item.name %></h5>
+            
+            <p><%= item.store %></p>
+            <p><b>Buy Now: </b>$<%= item.buy_price %></p>
+            <p><b>Size: </b><%= item.size_id %></p>
+            <p><b>Store: </b> <%= item.store %></p>  
+            <p><b>Description:</b> <br> <%= item.description %></p>
+            <%= link_to 'Show', item, class: "btn btn-mini btn-warning" %>
+            <%= link_to 'Edit', edit_item_path(item), class: "btn btn-mini btn-warning" %>
+            <%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } , class: "btn btn-mini btn-warning"%>            
+          </div>
+      </div>
+    
+  <% end %>

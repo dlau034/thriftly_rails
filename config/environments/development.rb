@@ -29,13 +29,13 @@ Testingapp::Application.configure do
   # number of complex assets.
   config.assets.debug = true
 
-  # Amazon S3
+  # Amazon S3 + Paperclip
   config.paperclip_defaults = {
     :storage => :s3,
     :s3_credentials => {
-      :bucket => ENV['AWS_BUCKET'],
-      :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
-      :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+      :bucket => "testingapp_dlau034",
+      :access_key_id => "AKIAICV5QWSBDEYGFROQ",
+      :secret_access_key => "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"
     }
   }  
 end

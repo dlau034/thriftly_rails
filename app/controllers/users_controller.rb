@@ -7,7 +7,13 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find(params[:id])    
+    @items = @user.items
+
+    respond_to do |format|
+      format.html { render html: users_path }
+      format.json { render json: @items }
+    end   
   end
   
   def update

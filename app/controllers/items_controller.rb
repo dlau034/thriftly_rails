@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  before_filter :authenticate_user!, except: [:index]
+
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   # GET /items
@@ -24,7 +26,9 @@ class ItemsController < ApplicationController
 
   # GET /items/new
   def new
-    @item = Item.new
+    # @item = Item.new
+    @item = current_user.items.new
+
   end
 
   # GET /items/1/edit
@@ -34,7 +38,8 @@ class ItemsController < ApplicationController
   # POST /items
   # POST /items.json
   def create
-    @item = Item.new(item_params)
+    # @item = Item.new(item_params)
+    @item = current_user.items.new(item_params)
 
     respond_to do |format|
       if @item.save
