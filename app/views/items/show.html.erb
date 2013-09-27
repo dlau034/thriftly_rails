@@ -1,28 +1,27 @@
 <p id="notice"><%= notice %></p>
 
-
 <div class="span4">
-<p>
-  <strong>Name:</strong>
-  <%= @item.name %>
-</p>
+	<p>
+	  <strong>Name:</strong>
+	  <%= @item.name %>
+	</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @item.description %>
-</p>
+	<p>
+	  <strong>Description:</strong>
+	  <%= @item.description %>
+	</p>
 
-<p>
-  <strong>Buy price:</strong>
-  <%= @item.buy_price %>
-</p>
+	<p>
+	  <strong>Buy price:</strong>
+	  <%= @item.buy_price %>
+	</p>
 
-<p>
-  <strong>Size:</strong>
-  <%= @item.size_id %>
-</p>
+	<p>
+	  <strong>Size:</strong>
+	  <%= @item.size_id %>
+	</p>
+	<%= image_tag @item.picture %>
 </div>
-
 
 <%= link_to 'Edit', edit_item_path(@item) %> |
 <%= link_to 'Back', items_path %>

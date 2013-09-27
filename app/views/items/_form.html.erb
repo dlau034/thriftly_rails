@@ -1,6 +1,11 @@
-<%= simple_form_for(@item) do |f| %>
-  <%= f.error_notification %>
 
+<%= simple_form_for @item, html: {multipart: true} do |f| %>
+
+  <%= f.error_notification %>
+  <%= f.full_error :image_file_size, class: "alert alert-error" %>
+  <%= f.full_error :image_content_type, class: "alert alert-error" %>
+
+  
   <div class="form-inputs">
     <%= f.input :name %>
     <%= f.input :description %>
@@ -8,6 +13,8 @@
     <%= f.input :store %>
     <%= f.input :image %>
     <%= f.input :size_id %>
+
+    <%= f.input :picture%>
   </div>
 
   <div class="form-actions">

@@ -37,18 +37,21 @@ h5 {
 .nav_options .dropdown-menu {
   border-radius: 0;
   border: none;
-  background-color: #ccc;
+  background-color: #f9f9f9;
   padding: 0;
   margin: 0;  
 }
 .nav_options .dropdown-menu a {
   padding: 7px 20px;
 }
+.nav_options .dropdown-menu a:hover {
+  background: none;
+  background-image:none;
+  background-color: #FB9B6D;
+}
 .navbar .nav > li > .dropdown-menu:after, .navbar .nav > li > .dropdown-menu:before {
   display: none;
 }
-
-
 
 /* ################################################################################################ */
 /* Index Page */
@@ -70,7 +73,9 @@ h5 {
   margin-top: 0.5em;
   border-top: 1px solid #ccc;
 }
-
+.box img {
+  width: 100%;
+}
 .large_wrapper {
   width: 980px!important;
   margin-top: 4em;
