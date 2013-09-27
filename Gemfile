@@ -4,6 +4,7 @@ ruby '2.0.0'
 # gem 'protected_attributes'
 
 gem "paperclip"
+gem "aws-sdk"
 
 gem 'rails', '4.0.0'
 gem 'sqlite3'
