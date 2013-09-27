@@ -1,25 +1,30 @@
-<div class="span12">
-  <!-- <h1>Listing items</h1> -->
-  <%= link_to 'New Item', new_item_path %>
-</div>   
-<!-- <br>
-<br>
-<br>
-<br>
-<br> -->
-<% @items.each do |item| %>
-    <div class="span3">
-      <%= link_to 'Show', item %>
-        <img alt="" src="http://placehold.it/600x400/0eafff/ffffff.png" />
-        <h4><%= item.name %></h4>
-        <p><%= item.description %></p>
-        <h5>$<%= item.buy_price %></h5>
-        <h5>Size:<%= item.size_id %></h5>
-        
-        <%= link_to 'Edit', edit_item_path(item) %>
-        <%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %>
-    </div>
-<% end %>
-<br>
+<!-- <div class="container"> -->
+  <%= link_to 'New Item', new_item_path, class: "btn btn-large btn-warning" %>
+<!-- </div>   -->
+<!-- <div class="container index_wrapper"> -->
+  
+  <!-- <div class="row box_row"> -->
+  <% @items.each do |item| %>
+    
+      <div class="box span3">        
+          <img src="<%= item.image %>" alt="">
+          <div class="content">
+            <h5><%= item.name %></h5>
+            
+            
+            <p><%= item.store %></p>
+            <p><b>Buy Now: </b>$<%= item.buy_price %></p>
+            <p><b>Size: </b><%= item.size_id %></p>
+            <p><b>Store: </b> <%= item.store %></p>  
+            <p><b>Description:</b> <br> <%= item.description %></p>
+            <%= link_to 'Show', item, class: "btn btn-mini btn-warning" %>
+            <%= link_to 'Edit', edit_item_path(item), class: "btn btn-mini btn-warning" %>
+            <%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } , class: "btn btn-mini btn-warning"%>            
+          </div>
+      </div>
+    
+  <% end %>
+  <!-- </div> -->
+<!-- </div> -->
 
 

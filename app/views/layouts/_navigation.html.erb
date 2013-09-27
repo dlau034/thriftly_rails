@@ -1,26 +1,60 @@
-<%= link_to "Testingapp", root_path, :class => 'brand' %>
-<ul class="nav">
+<!-- <a href="#"><img src="assets/logo.png" class="brand"></a> -->
+
+<a href="/items" class="brand head_logo">
+  <img src="<%= asset_path("logo.png") %>" alt="">
+</a>
+
+<ul class="nav nav_options">
+
+
   <% if user_signed_in? %>
-    <li>
-    <%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %>
-    </li>
+
+
   <% else %>
+
     <li>
-    <%= link_to 'Login', new_user_session_path %>
+      <%= link_to 'Login', new_user_session_path %>
     </li>
+    <li>
+      <%= link_to 'Twitter', user_omniauth_authorize_path(:twitter) %>
+    </link_to>
+
   <% end %>
+
+
   <% if user_signed_in? %>
-    <li>
-    <%= link_to 'Edit account', edit_user_registration_path %>
+
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle custom_drop" data-toggle="dropdown">
+          <%= current_user.name %>
+          <img src="<%= current_user.image %>" class="dp_image">
+        <b class="caret"></b>
+      </a>
+      <ul class="dropdown-menu">
+        <li>
+          <%= link_to 'Edit account', edit_user_registration_path %>
+        </li>
+        <li>      
+          <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+        </li>        
+      </ul>
     </li>
+
     <% if current_user.has_role? :admin %>
+
       <li>
-      <%= link_to 'Admin', users_path %>
+        <%= link_to 'Admin', users_path %>
       </li>
+
     <% end %>
+
   <% else %>
     <li>
-    <%= link_to 'Sign up', new_user_registration_path %>
+      <%= link_to 'Sign up', new_user_registration_path %>
     </li>
   <% end %>
 </ul>
+
+
+
+

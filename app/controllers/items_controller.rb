@@ -3,9 +3,19 @@ class ItemsController < ApplicationController
 
   # GET /items
   # GET /items.json
+  # def index
+  #   @items = Item.all
+  # end
+
   def index
     @items = Item.all
+
+    respond_to do |format|
+      format.html { render html: items_path }
+      format.json { render json: @items }
+    end    
   end
+
 
   # GET /items/1
   # GET /items/1.json
@@ -69,6 +79,6 @@ class ItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:name, :description, :buy_price, :size_id)
+      params.require(:item).permit(:name, :description, :buy_price, :size_id, :image, :store)
     end
 end

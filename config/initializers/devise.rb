@@ -4,7 +4,8 @@ Devise.setup do |config|
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
-  config.secret_key = '914d3770de77f72c2080da1c2c2a37666f795fa2f51ec5445a9f2589a56c1dece33521a2c19e3adbe3ee5e39a092c41f95add9c019b53e0645f9af7a2a53c87a'
+  # config.secret_key = '914d3770de77f72c2080da1c2c2a37666f795fa2f51ec5445a9f2589a56c1dece33521a2c19e3adbe3ee5e39a092c41f95add9c019b53e0645f9af7a2a53c87a'
+  # config.secret_key = '7bd62b7464dd73c1fc4b570f18096e808a88659b30a3803a69ba5c90f97d4bfed924f6487189816c1cff874cdd7d25572628b859d2b0dd0bd8d8cffd171dc0ad'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -231,7 +232,13 @@ Devise.setup do |config|
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
-  # config.omniauth :github, 'APP_ID', 'APP_SECRET', :scope => 'user,public_repo'
+
+  
+    config.omniauth :twitter, '98hfzJjQKvgCENCnK8IoQ', 'tefnJ33dfL58IdNQuaHcyAy0fa41SNMfL2UbyMLbis'
+  
+  
+  # provider :twitter, "98hfzJjQKvgCENCnK8IoQ", "tefnJ33dfL58IdNQuaHcyAy0fa41SNMfL2UbyMLbis"
+
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
