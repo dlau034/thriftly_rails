@@ -9,4 +9,8 @@ class Item < ActiveRecord::Base
 									size: { less_than: 2.megabytes }
 
 	belongs_to :user
+
+	def picture_url 
+		return picture.url 
+	end
 end

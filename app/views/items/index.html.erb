@@ -16,14 +16,14 @@
             <p><%= item.store %></p>
             <p><b>Buy Now: </b>$<%= item.buy_price %></p>
             <p><b>Size: </b><%= item.size_id %></p>
-            <p><b>Store: </b> <%= item.store %></p>  
+            <p><b>Store: </b> <%= item.store %></p>   
             <p><b>Description:</b> <br> <%= item.description %></p>
 
             <p><b>User: <%= link_to item.user.name, user_path(item.user.id) %></b></p>
             
             <%= link_to 'Show', item, class: "btn btn-mini btn-warning" %>
-            <%= link_to 'Edit', edit_item_path(item), class: "btn btn-mini btn-warning" %>
-            <%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } , class: "btn btn-mini btn-warning"%>            
+            <%#= link_to 'Edit', edit_item_path(item), class: "btn btn-mini btn-warning" %>
+            <%#= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } , class: "btn btn-mini btn-warning"%>            
           </div>
       </div>
     

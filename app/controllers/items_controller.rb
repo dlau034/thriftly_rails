@@ -5,24 +5,23 @@ class ItemsController < ApplicationController
 
   # GET /items
   # GET /items.json
-  # def index
-  #   @items = Item.all
-  # end
 
   def index
     @items = Item.all
 
     respond_to do |format|
       format.html { render html: items_path }
-      format.json { render json: @items }
+      format.json { render json: @items.as_json(methods: :picture_url) }
+      # format.json { render json: @items.picture_url }
     end    
   end
+
 
 
   # GET /items/1
   # GET /items/1.json
   def show
-    # @params = current_user.find(item_params)
+    
   end
 
   # GET /items/new
